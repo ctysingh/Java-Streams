@@ -21,6 +21,16 @@ public class Main {
         for ( String name: vegDishes ) {
             System.out.println(name);
         }
+        System.out.println("List of high calories dishes");
+        // get the dishes with calories more than 300
+        List<String > highCalories = dishes.stream()
+                .filter(d -> d.getCalories() > 300)
+                .map(Dish::getName)
+                .collect(Collectors.toList());
+
+        for (String name: highCalories  ) {
+            System.out.println(name);
+        }
 
     }
 
